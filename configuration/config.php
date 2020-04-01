@@ -3,7 +3,6 @@ $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
 $dbname = "mplace";
-
 //csatlakozás felépítése
 $dbc = new mysqli($host, $dbusername, $dbpassword, $dbname);
 

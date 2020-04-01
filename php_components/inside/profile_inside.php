@@ -1,14 +1,21 @@
 
     <main style="margin-left: 20%;width: 77%;" class="profile-page">
       <section class="relative block" style="height: 500px;">
-        <div
+        <div id="background-holder"
           class="absolute top-0 w-full h-full bg-center bg-cover"
-          style='background-image: url("https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80");'
+          style='background-image: url("../../storage/img/users/<?php echo $_SESSION['uBgp']?>");'
         >
           <span
             id="blackOverlay"
             class="w-full h-full absolute opacity-50 bg-black"
           ></span>
+          <form id="bg-uploader" style="position:absolute" action="#" method="POST">
+          <input class="hidden-file-input hidden" id="bg-upload"  accept="image/x-png,image/gif,image/jpeg" type="file" name="user_bg" >
+          <label style="z-index:999999" for="bg-upload" class="material-icon">
+            <i class=" fas fas  m-5 fa-camera p-3 bg-gray-200 rounded-full"></i>
+          </label>
+          <input class="hidden-file-input hidden" id="bg-file-save" type="submit" name="submit-bg">
+          </form>
         </div>
         <div
           class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
@@ -44,7 +51,7 @@
                     <img 
                         id="profipic"
                       alt="..."
-                      src="../../storage/img/<?php echo $_SESSION['uPp'];?>"
+                      src="../../storage/img/users/<?php echo $_SESSION['uPp'];?>"
                       class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 "
                       style="max-width: 150px;min-width:150px;height:150px;object-fit:cover;"
                     />
@@ -59,7 +66,7 @@
                 <input class="hidden-file-input hidden" id="file-save" type="submit" name="submit-profpic">
 
                 <label for="file-upload" class="material-icon">
-                    <i class=" fas fas m-5 fa-upload p-3 bg-gray-200 rounded-full"></i>
+                    <i class=" fas fas m-5 float right fa-upload p-3 m-3 bg-gray-200 rounded-full"></i>
                 </label>
                 
                 <label for="file-save" class="material-icon">
@@ -105,20 +112,21 @@
                   ></i>
                     <?php echo $_SESSION['uCi'] . ", " . $_SESSION['uCo'];?>
                 </div>
-                <div class="mb-2 text-gray-700 mt-10">
-                  <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i
-                  >Solution Manager - Creative Tim Officer
+                <div  class="mb-2 text-gray-700 mt-10">
+                  <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
+                  Munkahely: <div id="user-workplace" style="display:inline-block" contenteditable="true"><?php echo  $_SESSION["uWp"];?></div>
                 </div>
                 <div class="mb-2 text-gray-700">
                   <i class="fas fa-university mr-2 text-lg text-gray-500"></i
-                  >University of Computer Science
+                  >Tanulmányok:  <div id="user-study" style="display:inline-block" contenteditable="true"><?php echo  $_SESSION["uSc"];?></div>
                 </div>
               </div>
               <div class="mt-10 py-10 border-t border-gray-300 text-center">
                 <div class="flex flex-wrap justify-center">
                   <div class="w-full lg:w-9/12 px-4">
                     <p class="mb-4 text-lg leading-relaxed text-gray-800">
-                     <?php echo $_SESSION['uBio'];?>
+
+                    <div id="user-bio" contenteditable="true"><?php echo $_SESSION['uBio'];?></div>
                     </p>
                   
                   </div>

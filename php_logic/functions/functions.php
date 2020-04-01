@@ -5,6 +5,12 @@ function sanitiseInput($dbc, $input){
     return $sanitised_input;
 }
 
+function debugTool(){
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
+
 function registrateUser($dbc, $userFirstName, $userLastName, $userPassword, $userEmail, $userCity, $userCounty, $userZip){
     $sql = "INSERT INTO users (user_first_name, user_second_name, user_password, user_email, user_city, user_county, user_zipcode, user_regdate) VALUES (?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($dbc);
@@ -36,9 +42,11 @@ function loginUser($dbc,$userEmail,$userPassword){
            $_SESSION["uCi"] = $row["user_city"];
            $_SESSION["uZip"] = $row["user_zip"];
            $_SESSION["uPp"] = $row["user_profile_puc"];
+           $_SESSION["uBgp"] = $row["user_profile_puc"];
            $_SESSION["uCo"] = $row["user_county"];
            $_SESSION["uBio"] = $row["user_bio"];
-
+           $_SESSION["uWp"] = $row["user_work_place"];
+           $_SESSION["uSc"] = $row["user_school"];
         }
         return true;
     }
