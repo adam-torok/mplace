@@ -11,7 +11,7 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow">
-      <a href="../php_main/index.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4">
+      <a href="../../php_main/out/index.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4">
         Főoldal
       </a>
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4">

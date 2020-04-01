@@ -7,7 +7,7 @@
               Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
             </p>
             <div class="flex mt-6 justify-start md:justify-center xl:justify-start">
-              <a href="../php_main/registrate.php" class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-blue-500 hover:bg-blue-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md">Regisztrálj</a>
+              <a href="../../php_main/out/registrate.php" class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-blue-500 hover:bg-blue-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md">Regisztrálj</a>
               <a href="#what-is-tailwind" class="ml-4 rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-white hover:bg-gray-200 md:text-lg xl:text-base text-gray-800 font-semibold leading-tight shadow-md">Miért regisztráljon?</a>
             </div>
           </div>

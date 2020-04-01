@@ -1,6 +1,6 @@
 <div class="flex justify-center container-mx-auto">
   <div class="max-w-xs rounded m-2 overflow-hidden shadow-lg">
-<img class="w-full" src="../storage/img/photo1.jpg" alt="Sunset in the mountains">
+<img class="w-full" src="../../storage/img/photo1.jpg" alt="Sunset in the mountains">
 <div class="px-6 py-4">
   <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
   <p class="text-gray-700 text-base">
@@ -13,7 +13,7 @@
 </div>
 </div>
 <div class="max-w-xs m-2 rounded overflow-hidden shadow-lg">
-<img class="w-full" src="../storage/img/photo1.jpg" alt="Sunset in the mountains">
+<img class="w-full" src="../../storage/img/photo1.jpg" alt="Sunset in the mountains">
 <div class="px-6 py-4">
 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
 <p class="text-gray-700 text-base">
@@ -26,7 +26,7 @@
 </div>
 </div>
 <div class="max-w-xs m-2 rounded overflow-hidden shadow-lg">
-<img class="w-full" src="../storage/img/photo1.jpg" alt="Sunset in the mountains">
+<img class="w-full" src="../../storage/img/photo1.jpg" alt="Sunset in the mountains">
 <div class="px-6 py-4">
 <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
 <p class="text-gray-700 text-base">
