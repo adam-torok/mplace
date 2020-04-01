@@ -27,6 +27,19 @@ function loginUser($dbc,$userEmail,$userPassword){
     $result = mysqli_stmt_get_result($stmt);
     $num_rows = mysqli_num_rows($result);
     if($num_rows == 1){
+        session_start();
+        while($row = mysqli_fetch_assoc($result)){
+           $_SESSION["uId"] = $row["user_id"];
+           $_SESSION["uFN"] = $row["user_first_name"];
+           $_SESSION["uEmail"] = $row["user_email"];
+           $_SESSION["uLN"] = $row["user_second_name"];
+           $_SESSION["uCi"] = $row["user_city"];
+           $_SESSION["uZip"] = $row["user_zip"];
+           $_SESSION["uPp"] = $row["user_profile_puc"];
+           $_SESSION["uCo"] = $row["user_county"];
+           $_SESSION["uBio"] = $row["user_bio"];
+
+        }
         return true;
     }
     else{

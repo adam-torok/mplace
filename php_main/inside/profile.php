@@ -7,18 +7,16 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Mplace</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/output.css">
   </head>
   <body>
     <?php include_once("../../php_components/inside/header_inside.php");?>
     <?php include_once("../../php_components/inside/side_nav.php");?>
-    <div class="flex justify-center flex-col items-center">
-      <?php include_once("../../php_components/inside/post_writer_inside.php");?>
-      <div class="w-2/3  md:px-12 lg:24 h-full m-10 antialiasedl">
-      <?php include_once("../../php_components/inside/post_wall_inside.php");?>
-      </div>
-      <?php var_dump($_SESSION); ?>
+    <div class="flex max-w-full pt-20 p-5 justify-center">
+    <?php include_once("../../php_components/inside/profile_inside.php");?>
     </div>
   </body>
+  <script src="../../js/ajax/ajax.js"></script>
 </html>
