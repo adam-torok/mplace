@@ -18,5 +18,6 @@ session_start();
     <?php include_once("../../php_components/inside/profile_inside.php");?>
     </div>
   </body>
+  <script src="../../js/ajax/weather.js"></script>
   <script src="../../js/ajax/ajax.js"></script>
 </html>

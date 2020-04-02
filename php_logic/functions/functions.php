@@ -1,8 +1,15 @@
 <?php
+session_start();
 
 function sanitiseInput($dbc, $input){
     $sanitised_input = mysqli_real_escape_string($dbc,$input);
     return $sanitised_input;
+}
+
+function isLogged(){
+    if(empty($_SESSION['uId'])){
+        header("Location: ../../php_main/out/index.php");
+    }
 }
 
 function debugTool(){
@@ -51,9 +58,15 @@ function loginUser($dbc,$userEmail,$userPassword){
         return true;
     }
     else{
-        return false;
+        echo "<script type='text/javascript'>
+        $(document).ready(function(){
+        $('#Modal').modal('show');
+        });
+        </script>";
     }
 }
+
+
 
 function getDatetimeNow() {
     $tz_object = new DateTimeZone('Brazil/East');

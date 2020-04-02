@@ -13,6 +13,11 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+*{
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
 /* Sections
    ========================================================================== */
 
@@ -9977,7 +9982,7 @@ video {
 }
 
 .text-white {
-  color: #fff;
+  color: #fff!important;
 }
 
 .text-gray-100 {
@@ -9993,7 +9998,7 @@ video {
 }
 
 .text-gray-400 {
-  color: #cbd5e0;
+  color: #cbd5e0!important;
 }
 
 .text-gray-500 {
@@ -10001,7 +10006,7 @@ video {
 }
 
 .text-gray-600 {
-  color: #718096;
+  color: #718096!important;
 }
 
 .text-gray-700 {
@@ -23301,7 +23306,7 @@ video {
   }
 
   .sm\:text-white {
-    color: #fff;
+    color: #fff!important;
   }
 
   .sm\:text-gray-100 {
