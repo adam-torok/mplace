@@ -83,7 +83,8 @@ $(document).ready(function(){
         $("#background").toggleClass("bg-gray-800");
         $("body").toggleClass("bg-gray-800");
         $("#sidebar").toggleClass("bg-gray-900");
-            $("#profsec").toggleClass("bg-gray-800");
+        $("#profsec").toggleClass("bg-gray-800");
+        $(".text-sm").children().toggleClass("text-white");
         $("#profesc2").toggleClass("bg-gray-700")
         $("#profesc2").children().children().children().toggleClass("text-gray-900");
         $("#profdesc").toggleClass("text-gray-400");

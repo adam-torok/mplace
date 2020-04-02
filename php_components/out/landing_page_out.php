@@ -2,7 +2,7 @@
 <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-16 pb-40 md:pb-24">
         <div class="xl:flex -mx-6">
           <div class="px-6 text-left md:text-center xl:text-left max-w-2xl md:max-w-3xl mx-auto">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-4xl font-light leading-tight">A mPlace a tökéletes hely <span class="sm:block text-blue-500 font-normal"> új élmények szerzésére.</span></h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-4xl font-light leading-tight">A ThoughtCloud a tökéletes hely <span class="sm:block text-blue-500 font-normal"> új élmények szerzésére.</span></h1>
             <p class="mt-6 leading-relaxed sm:text-lg md:text-xl xl:text-lg text-gray-600">
               Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
             </p>
@@ -17,7 +17,7 @@
   <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-16 pb-40 md:pb-24">
           <div class="xl:flex -mx-6">
             <div class="px-6 text-left md:text-center xl:text-left max-w-2xl md:max-w-3xl mx-auto">
-              <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-4xl font-light leading-tight">A mPlace a tökéletes hely <span class="sm:block text-blue-500 font-normal"> új élmények szerzésére.</span></h1>
+              <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-4xl font-light leading-tight">A ThoughtCloud a tökéletes hely <span class="sm:block text-blue-500 font-normal"> új élmények szerzésére.</span></h1>
               <p class="mt-6 leading-relaxed sm:text-lg md:text-xl xl:text-lg text-gray-600">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>

@@ -3,7 +3,7 @@
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full">
           </i>
-          <span class="mx-2">Főoldal</span>
+          <span class="mx-2">Ismerősök</span>
         </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full">
@@ -16,7 +16,7 @@
             </i>
             
           </span>
-          <span class="mx-2">sign ups</span>
+          <span class="mx-2">Emberek  </span>
         </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full">
