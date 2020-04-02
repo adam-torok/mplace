@@ -46,6 +46,7 @@ $(document).ready(function(){
         $("#sidebar2").toggleClass("bg-gray-900");
         $("#topmenu").toggleClass("bg-gray-900");
         $(".counter").toggleClass("text-gray-400");
+      
         $("#post-text").toggleClass("bg-gray-400");
         $(".post-text").toggleClass("text-gray-600");
         $("#post-writer").toggleClass("bg-gray-900");
@@ -65,7 +66,8 @@ $(document).ready(function(){
         $("#profdesc").removeClass("text-gray-400");
         $("#name").removeClass("text-white");
         $(".home").removeClass("text-white");
-        $("#sidebar2").removeClass("bg-gray-900");
+
+        $(".person-card").children().toggleClass("text-white");
         $("#topmenu").removeClass("bg-gray-900");
         $(".counter").removeClass("text-gray-400");
         $("#post-text").removeClass("bg-gray-400");
@@ -83,8 +85,8 @@ $(document).ready(function(){
         $("#background").toggleClass("bg-gray-800");
         $("body").toggleClass("bg-gray-800");
         $("#sidebar").toggleClass("bg-gray-900");
+        $(".person-card").toggleClass("bg-gray-900");
         $("#profsec").toggleClass("bg-gray-800");
-        $(".text-sm").children().toggleClass("text-white");
         $("#profesc2").toggleClass("bg-gray-700")
         $("#profesc2").children().children().children().toggleClass("text-gray-900");
         $("#profdesc").toggleClass("text-gray-400");
@@ -100,6 +102,7 @@ $(document).ready(function(){
         $(".card").toggleClass("bg-gray-900");
         $(".post-header-text").toggleClass("text-gray-400");
         $(".sidebar-item").toggleClass("text-gray-400");
+        $(".text-sm").children().addClass("text-white");
         $(".rounded-full").toggleClass("bg-gray-800");
         $(".rounded-full").toggleClass("text-gray-400");
         localStorage.setItem('theme','dark');
@@ -111,6 +114,7 @@ $(document).ready(function(){
         $("body").removeClass("bg-gray-800");
         $("#sidebar").removeClass("bg-gray-900");
         $("#profsec").removeClass("bg-gray-800");
+        $(".text-sm").children().removeClass("text-white");
         $("#profesc2").removeClass("bg-gray-700")
         $("#profesc2").children().children().children().removeClass("text-gray-900");
         $("#profdesc").removeClass("text-gray-400");

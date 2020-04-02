@@ -16,7 +16,7 @@
             </i>
             
           </span>
-          <span class="mx-2">Emberek  </span>
+          <a  class="hover:text-gray-900" href="../../php_main/inside/people.php" class="mx-2">Emberek</a>
         </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full">

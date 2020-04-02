@@ -11,7 +11,7 @@ require_once("../../php_logic/functions/functions.php");
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/output.css">
   </head>
-  <body>
+  <body oncontextmenu="return false">
     <?php include_once("../../php_components/inside/header_inside.php");?>
     <?php include_once("../../php_components/inside/side_nav.php");?>
     <div class="flex max-w-full pt-20 p-5 justify-center">

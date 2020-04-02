@@ -17,6 +17,11 @@ $result = $dbc ->query($sql);
         <a href="../../php_main/inside/other_profile.php?id=<?php echo $row['user_id'];?>" class="text-gray-900 leading-none"><?php echo $row['user_first_name']. " " .$row['user_second_name'];?></a>
         <p class="text-gray-600"><?php echo $row['post_date'];?></p>
       </div>
+      <div>
+      <i class="far fa-heart like-btn text-blue-500"></i>
+
+
+      </div>
       <?php if($row['user_id'] == $_SESSION['uId']){?>
          <i id='delete-post' data-id="<?php echo $row['post_id']?>"style='margin-left: auto;' class='delete-post w-8 fas fa-trash p-2 bg-gray-200 rounded-full'></i>
        <?php }?>

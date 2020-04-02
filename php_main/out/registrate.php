@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../../css/output.css">
   </head>
-  <body>
+  <body oncontextmenu="return false">
     <?php include_once("../../php_components/out/header_out.php");?>
     <?php include_once("../../php_components/forms/registrate_form_forms.php");?>
   </body>

@@ -2,7 +2,7 @@
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "mplace";
+$dbname = "thoughtcloud";
 //csatlakozás felépítése
 $dbc = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
