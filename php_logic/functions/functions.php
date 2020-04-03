@@ -85,9 +85,6 @@ function getLikes($dbc,$id)
   		  WHERE post_id = $id AND action='like'";
   $rs = mysqli_query($dbc, $sql);
   $result = mysqli_fetch_array($rs);
-  if(!$result){
-    printf("Error: %s\n", mysqli_error($dbc));
-  }
   return $result[0];
 }
 
@@ -97,15 +94,11 @@ function getRating($dbc,$id)
   $user_id = $_SESSION['uId'];
   $rating = array();
   $likes_query = "SELECT COUNT(*) FROM likes WHERE post_id = $id AND action='like'";
-  $dislikes_query = "SELECT COUNT(*) FROM likes
-		  			WHERE user_id = $user_id AND action='dislike'";
+
   $likes_rs = mysqli_query($dbc, $likes_query);
-  $dislikes_rs = mysqli_query($dbc, $dislikes_query);
   $likes = mysqli_fetch_array($likes_rs);
-  $dislikes = mysqli_fetch_array($dislikes_rs);
   $rating = [
-  	'likes' => $likes[0],
-  	'dislikes' => $dislikes[0]
+  	'likes' => $likes[0]
   ];
   return json_encode($rating);
 }

@@ -1,6 +1,5 @@
 <?php require_once("../../configuration/config.php");
 require_once("../functions/functions.php");
-mysqli_report(MYSQLI_REPORT_ALL);
 
 $userId = $_SESSION['uId'];
 if (isset($_POST['action'])) {
