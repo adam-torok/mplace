@@ -14,10 +14,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $target = "../../storage/img/users/" . $blog_img;
             $sql = "INSERT INTO blogs (user_id, blog_header, blog_text, blog_category, blog_img, blog_date) VALUES (?,?,?,?,?,?)";
             $stmt = $dbc -> stmt_init();
-            if($stmt -> prepare($sql)){
-                $stmt -> bind_param("isssss",$user_id,$blog_header,$blog_text,$blog_category,$blog_img,$date);
-                $stmt -> execute();
-                $stmt->close();
+            if(move_uploaded_file($_FILES['blogImg']['tmp_name'],$target)){
+                if($stmt -> prepare($sql)){
+                    $stmt -> bind_param("isssss",$user_id,$blog_header,$blog_text,$blog_category,$blog_img,$date);
+                    $stmt -> execute();
+                    $stmt->close();
+                }
             }
         }else{
             $sql = "INSERT INTO blogs (user_id, blog_header, blog_text, blog_category, blog_date) VALUES (?,?,?,?,?)";

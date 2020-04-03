@@ -154,14 +154,12 @@ $(document).ready(function(){
 
     $("#blog-writer").on('submit',(function(e) {
         var formData = new FormData(this);
-        console.log(formData);
         $.ajax({
             url: "../../php_logic/inside/post_a_blog.php",
             type: 'POST',
             data: formData,
-            
             success: function (data) {
-                alert(data)
+            location.reload();
             },
             cache: false,
             contentType: false,
