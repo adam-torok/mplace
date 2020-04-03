@@ -2,9 +2,8 @@
 $sql = "SELECT * FROM posts JOIN users ON (users.user_id = posts.user_id) ORDER BY post_date DESC";
 $result = $dbc ->query($sql);
 ?>
-
   <?php while($row = $result -> fetch_assoc()){;?>
-    <div  class="  max-w-sm w-full m-2 lg:max-w-full lg:flex"></div>
+    <div  class="max-w-sm w-full m-2 lg:max-w-full lg:flex"></div>
   <div class="card border-gray-400   bg-white rounded-b shadow-lg lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
     <div class="mb-8">
 
@@ -19,9 +18,9 @@ $result = $dbc ->query($sql);
       </div>
       <div style="margin-left:2vw" class="text-red-500">
       <i <?php if (userLiked($dbc,$row['post_id'])): ?>
-                class="fas fa-heart like-btn"
+                class="fas fa-heart cursor-pointer like-btn hover:text-red-800"
               <?php else: ?>
-                class="far fa-heart like-btn"
+                class="far fa-heart cursor-pointer like-btn hover:text-red-800"
               <?php endif ?>
               data-id="<?php echo $row['post_id'] ?>"></i>
               <span class="likes"><?php echo getLikes($dbc,$row['post_id']); ?></span>

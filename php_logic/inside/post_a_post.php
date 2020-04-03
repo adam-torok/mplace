@@ -12,7 +12,6 @@ mysqli_report(MYSQLI_REPORT_ALL);
             if ($stmt = $dbc->prepare($sql)) {
                 $stmt->bind_param("sis",$userPost,$_SESSION['uId'],$date);
                 $stmt->execute();
-
                 }
                 $stmt->close();
             }    

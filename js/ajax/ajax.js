@@ -31,6 +31,8 @@ $(document).ready(function(){
         
     })
 
+    
+
     const theme = localStorage.getItem('theme');
 
     if(theme == "dark"){
@@ -150,6 +152,22 @@ $(document).ready(function(){
        });
     }));
 
+    $("#blog-writer").on('submit',(function(e) {
+        var formData = new FormData(this);
+        console.log(formData);
+        $.ajax({
+            url: "../../php_logic/inside/post_a_blog.php",
+            type: 'POST',
+            data: formData,
+            
+            success: function (data) {
+                alert(data)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+       });
+    }));
     
     $("#user-bio").focusout(function(){
         var textOfInput = $(this).text();

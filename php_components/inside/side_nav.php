@@ -21,7 +21,7 @@
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full">
           </i>
-          <span class="mx-2">menu</span>
+          <a href="../../php_main/inside/blog.php" class="mx-2">Blog</a>
         </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-calendar-alt p-2 bg-gray-200 rounded-full">
