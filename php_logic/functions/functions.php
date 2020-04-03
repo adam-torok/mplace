@@ -76,4 +76,66 @@ function getDatetimeNow() {
     return $datetime->format('Y\-m\-d\ h:i:s');
 }
 
+
+// START
+
+function getLikes($dbc,$id)
+{
+  $sql = "SELECT COUNT(*) FROM likes
+  		  WHERE post_id = $id AND action='like'";
+  $rs = mysqli_query($dbc, $sql);
+  $result = mysqli_fetch_array($rs);
+  if(!$result){
+    printf("Error: %s\n", mysqli_error($dbc));
+  }
+  return $result[0];
+}
+
+
+function getRating($dbc,$id)
+{
+  $user_id = $_SESSION['uId'];
+  $rating = array();
+  $likes_query = "SELECT COUNT(*) FROM likes WHERE post_id = $id AND action='like'";
+  $dislikes_query = "SELECT COUNT(*) FROM likes
+		  			WHERE user_id = $user_id AND action='dislike'";
+  $likes_rs = mysqli_query($dbc, $likes_query);
+  $dislikes_rs = mysqli_query($dbc, $dislikes_query);
+  $likes = mysqli_fetch_array($likes_rs);
+  $dislikes = mysqli_fetch_array($dislikes_rs);
+  $rating = [
+  	'likes' => $likes[0],
+  	'dislikes' => $dislikes[0]
+  ];
+  return json_encode($rating);
+}
+
+function userLiked($dbc,$post_id)
+{
+  $user_id = $_SESSION['uId'];
+  $sql = "SELECT * FROM likes WHERE user_id = $user_id
+  		  AND post_id= $post_id AND action='like'";
+  $result = mysqli_query($dbc, $sql);
+  if (mysqli_num_rows($result) > 0) {
+  	return true;
+  }else{
+  	return false;
+  }
+}
+
+function userDisliked($post_id)
+{
+  global $dbc;
+  global $userId;
+  $sql = "SELECT * FROM likes WHERE user_id=$userId
+  		  AND post_id=$post_id AND action='dislike'";
+  $result = mysqli_query($dbc, $sql);
+  if (mysqli_num_rows($result) > 0) {
+  	return true;
+  }else{
+  	return false;
+  }
+}
+//VÉGE
+
 ?>

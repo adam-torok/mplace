@@ -1,8 +1,7 @@
 <?php
 require_once("../../configuration/config.php");
 require_once("../../php_logic/functions/functions.php");
-isLogged();
-?>
+isLogged();?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

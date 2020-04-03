@@ -221,6 +221,47 @@ $(document).ready(function(){
        });
     }));
 
+
+    // Ha egy felhasználó a szívre kattint...
+$('.like-btn').on('click', function(){
+    var postId = $(this).data('id');
+    $clicked_btn = $(this);
+    console.log(postId);
+    if ($clicked_btn.hasClass('far fa-heart')) {
+        action = 'like';
+    } else if($clicked_btn.hasClass('fas fa-heart')){
+        action = 'unlike';
+    }
+    console.log(action);
+    
+    $.ajax({
+        url: '../../php_logic/inside/like.php',
+        type: 'POST',
+        data: {
+            'action': action,
+            'post_Id': postId
+        },  
+        success: function(data){
+            console.log(data);
+            
+            res = JSON.parse(data);
+            if (action == "like") {
+                $clicked_btn.removeClass('far fa-heart');
+                $clicked_btn.addClass('fas fa-heart');
+            } else if(action == "unlike") {
+                $clicked_btn.removeClass('fas fa-heart');
+                $clicked_btn.addClass('far fa-heart');
+            }
+            $clicked_btn.siblings('span.likes').text(res.likes);
+  
+            $clicked_btn.siblings('i.fas fa-heart').removeClass('fas fa-heart').addClass('far fa-heart');
+        },
+      error: function(req, err){ console.log('my message' + err); }
+  
+    });
+  
+  });
+
     function showPreviewOfProfPic(objFileInput) {
         console.log("prev");
 		if (objFileInput.files[0]) {
