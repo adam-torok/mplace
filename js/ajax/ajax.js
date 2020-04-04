@@ -13,7 +13,7 @@ $("#results").load("../../php_logic/inside/pagination.php",{"page":page}, functi
         console.log(search);
         $.ajax({
             url:"../../php_logic/inside/search.php",
-            type : "POST",
+            type : "GET",
             data:{input:search},
             succes:function(){
                 alert("na");
@@ -23,6 +23,13 @@ $("#results").load("../../php_logic/inside/pagination.php",{"page":page}, functi
             }
         })
         
+    })
+
+    $(".categorysel").click(function(){
+        var category = $(this).data("id");
+        var page = $(this).attr("data-page");
+        $("#results").load("../../php_logic/inside/pagination.php",{category:category}, function(){ 
+        });
     })
     
     $("#user-study").focusout(function(){

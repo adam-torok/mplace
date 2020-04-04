@@ -20,6 +20,7 @@ debugTool();
     <div id="background" style="padding-top:3vw;margin-left:calc(20%);"class="flex justify-center flex-col items-center">
       <div class="w-2/3  md:px-12 lg:24 h-full m-0 antialiasedl">
       <?php include_once("../../php_components/inside/blog_writer_inside.php");?>
+      <?php include_once("../../php_components/inside/category_select.php");?>
       <?php include_once("../../php_components/inside/blog_pagination.php");?>  
       </div>
       <script src="../../js/ajax/ajax.js"></script>

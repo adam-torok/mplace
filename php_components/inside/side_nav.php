@@ -8,7 +8,7 @@
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full">
           </i>
-          <span class="mx-2">Keresés</span>
+          <a href="../../php_main/inside/search.php" class="mx-2">Keresés</a>
         </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
             <i class="w-8 fas fa-user p-2 bg-gray-200 rounded-full">
