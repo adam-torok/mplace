@@ -1,5 +1,30 @@
 $(document).ready(function(){   
+$("#results").load( "../../php_logic/inside/pagination.php");
+$("#results").on( "click", ".pagination a", function (e){
+e.preventDefault();
+var page = $(this).attr("data-page");
+$("#results").load("../../php_logic/inside/pagination.php",{"page":page}, function(){ 
+});
+    });
 
+
+    $("#search").keyup(function(){
+        var search = $(this).val();
+        console.log(search);
+        $.ajax({
+            url:"../../php_logic/inside/search.php",
+            type : "POST",
+            data:{input:search},
+            succes:function(){
+                alert("na");
+            },
+            error:function(){
+                alert("mégse");
+            }
+        })
+        
+    })
+    
     $("#user-study").focusout(function(){
         var textOfInput = $(this).text();
         $.ajax({
@@ -236,7 +261,6 @@ $(document).ready(function(){
             } 	        
        });
     }));
-
 
     // Ha egy felhasználó a szívre kattint...
 $('.like-btn').on('click', function(){

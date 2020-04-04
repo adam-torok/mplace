@@ -2,6 +2,7 @@
 require_once("../../configuration/config.php");
 require_once("../../php_logic/functions/functions.php");
 isLogged();
+debugTool();
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +20,7 @@ isLogged();
     <div id="background" style="padding-top:3vw;margin-left:calc(20%);"class="flex justify-center flex-col items-center">
       <div class="w-2/3  md:px-12 lg:24 h-full m-0 antialiasedl">
       <?php include_once("../../php_components/inside/blog_writer_inside.php");?>
-      <div style="display:grid;grid-template-columns:1fr 1fr;grid-gap:2vw">
-      <?php include_once("../../php_components/inside/blog_wall_inside.php");?>
-      </div>
+      <?php include_once("../../php_components/inside/blog_pagination.php");?>  
       </div>
       <script src="../../js/ajax/ajax.js"></script>
       <script src="../../js/ajax/weather.js"></script>

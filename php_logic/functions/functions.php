@@ -77,8 +77,6 @@ function getDatetimeNow() {
 }
 
 
-// START
-
 function getLikes($dbc,$id)
 {
   $sql = "SELECT COUNT(*) FROM likes
@@ -116,19 +114,62 @@ function userLiked($dbc,$post_id)
   }
 }
 
-function userDisliked($post_id)
+function getBlogCount($dbc)
 {
-  global $dbc;
-  global $userId;
-  $sql = "SELECT * FROM likes WHERE user_id=$userId
-  		  AND post_id=$post_id AND action='dislike'";
+  $sql = "SELECT COUNT(*) FROM blogs";
   $result = mysqli_query($dbc, $sql);
-  if (mysqli_num_rows($result) > 0) {
-  	return true;
-  }else{
-  	return false;
-  }
+  $count =  mysqli_num_rows($result);
+  echo $count;
 }
-//VÉGE
+
+function paginate_function($item_per_page, $current_page, $total_records, $total_pages)
+{
+    $pagination = '';
+    if($total_pages > 0 && $total_pages != 1 && $current_page <= $total_pages){ 
+        $pagination .= '<ul style="display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem;" class="pagination">';
+        
+        $right_links    = $current_page + 3; 
+        $previous       = $current_page - 3; 
+        $next           = $current_page + 1; 
+        $first_link     = true;
+        
+        if($current_page > 1){
+			$previous_link = ($previous==0)?1:$previous;
+            $pagination .= '<li class="first mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg"><a href="#" data-page="1" title="First">«</a></li>';
+            $pagination .= '<li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg"><a href="#" class="" data-page="'.$previous_link.'" title="Previous"><</a></li>';
+                for($i = ($current_page-2); $i < $current_page; $i++){ 
+                    if($i > 0){
+                        $pagination .= '<li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg"><a href="#" data-page="'.$i.'" title="Page'.$i.'">'.$i.'</a></li>';
+                    }
+                }   
+            $first_link = false; 
+        }
+        
+        if($first_link){
+            $pagination .= '<li class="first active mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">'.$current_page.'</li>';
+        }elseif($current_page == $total_pages){
+            $pagination .= '<li class="last active mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">'.$current_page.'</li>';
+        }else{ 
+            $pagination .= '<li class="active mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">'.$current_page.'</li>';
+        }
+                
+        for($i = $current_page+1; $i < $right_links ; $i++){ 
+            if($i<=$total_pages){
+                $pagination .= '<li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg"><a href="#" data-page="'.$i.'" title="Page '.$i.'">'.$i.'</a></li>';
+            }
+        }
+        if($current_page < $total_pages){ 
+				$next_link = ($i > $total_pages)? $total_pages : $i;
+                $pagination .= '<li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg"><a href="#" data-page="'.$next_link.'" title="Next">></a></li>';
+                $pagination .= '<li class="last mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg"><a href="#" data-page="'.$total_pages.'" title="Last">»</a></li>';
+        }
+        
+        $pagination .= '</ul>'; 
+    }
+    return $pagination; 
+}
 
 ?>

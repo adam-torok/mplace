@@ -15,7 +15,7 @@ require_once("../../php_logic/functions/functions.php");
     <?php include_once("../../php_components/inside/header_inside.php");?>
     <?php include_once("../../php_components/inside/side_nav.php");?>
     <div class="flex max-w-full pt-20 p-5 justify-center">
-    <?php include_once("../../php_components/inside/profile_inside.php");?>
+    <?php include_once("../../php_components/inside/search_inside.php");?>
     </div>
   </body>
   <script src="../../js/ajax/weather.js"></script>
