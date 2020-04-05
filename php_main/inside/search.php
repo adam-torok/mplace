@@ -15,7 +15,10 @@ require_once("../../php_logic/functions/functions.php");
     <?php include_once("../../php_components/inside/header_inside.php");?>
     <?php include_once("../../php_components/inside/side_nav.php");?>
     <div class="flex max-w-full pt-20 p-5 justify-center">
+    <div style="margin-left:20%;flex-direction:column" class="flex">
     <?php include_once("../../php_components/inside/search_inside.php");?>
+    <div id="search-res"></div>
+    </div>
     </div>
   </body>
   <script src="../../js/ajax/weather.js"></script>

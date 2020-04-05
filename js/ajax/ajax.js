@@ -8,21 +8,12 @@ $("#results").load("../../php_logic/inside/pagination.php",{"page":page}, functi
     });
 
 
-    $("#search").keyup(function(){
-        var search = $(this).val();
-        console.log(search);
-        $.ajax({
-            url:"../../php_logic/inside/search.php",
-            type : "GET",
-            data:{input:search},
-            succes:function(){
-                alert("na");
-            },
-            error:function(){
-                alert("mégse");
-            }
-        })
-        
+    $("#search").on('keyup',function(){
+    var search = $(this).val();
+    $.get( "../../php_logic/inside/search.php", {input:search}, function( data ) {
+        $( "#search-res" ).html( data );
+      }); 
+    
     })
 
     $(".categorysel").click(function(){

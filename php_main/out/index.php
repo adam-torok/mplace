@@ -7,7 +7,7 @@
   </head>
   <body oncontextmenu="return false">
     <?php include_once("../../php_components/out/header_out.php");?>
+    <div class="area-bg"></div>
     <?php include_once("../../php_components/out/landing_page_out.php");?>
-    <?php include_once("../../php_components/out/about_us_out.php");?>
   </body>
 </html>

@@ -12,6 +12,7 @@ include_once("../../php_logic/functions/functions.php");
   </head>
   <body oncontextmenu="return false">
     <?php include_once("../../php_components/out/header_out.php");?>
+    <div class="area-bg"></div>
     <?php include_once("../../php_components/forms/login_form_forms.php");?>
   </body>
   <script src="../../js/validate.js"></script>

@@ -1,11 +1,9 @@
 <?php
 include_once("../../configuration/config.php");
 require_once("../functions/functions.php");
-mysqli_report(MYSQLI_REPORT_ALL);
-
 
 if($_SERVER['REQUEST_METHOD'] == "GET"){
-    $sql = "SELECT * FROM posts";
+    $sql = "SELECT * FROM posts JOIN users ON (users.user_id = posts.user_id)";
     $input = trim($_GET['input']);
     $where_list = array();
     $search_words = explode(' ',$input);
@@ -17,26 +15,26 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
     if (!empty($where_clause)) {
         $sql .= " WHERE $where_clause";
         }
-    $results = $dbc -> query($sql);
+        $result = $dbc->query($sql);
+
 }
-
 ?>
-<?php while($row = $results -> fetch_assoc()){?>
-<div style="margin-bottom:3rem;margin-top:2rem;" class="card m-5 bg-white w-full shadow-lg rounded-lg p-5">
-<a style="width: 100%;margin: 22px;" href="../../php_main/inside/specific_blog.php?id=<?php echo $row['blog_id']?>" class="max-w-sm m-5 rounded overflow-hidden shadow-lg">
-<?php if(!is_null($row['blog_img'])){?>
-    <img style="object-fit:cover" class="w-full h-48" src="../../storage/img/users/<?php echo $row['blog_img'];?>" alt="Kép címe">
-<?php } ?>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><?php echo $row['blog_header'];?></div>
-    <p class="text-gray-700 text-base">
-     <?php echo substr($row['blog_text'],0,150)."...";?>
-    </p>
+<?php
+if ($result->num_rows > 0) { while($row = $result -> fetch_assoc()){?>
+  <div  class="max-w-sm w-full m-2 lg:max-w-full lg:flex"></div>
+  <div class="card border-gray-400   bg-white rounded-b shadow-lg lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="mb-8">
+      <div class="post-header-text text-gray-900 font-bold text-xl mb-2"> <?php echo $row['user_second_name']?> írt egy gondolatot</div>
+      <p class="post-text text-gray-700 text-base"><?php echo $row['post_text'];?></p>
+    </div>
+    <div class="flex items-center">
+      <img style="object-fit:cover" class="w-10 h-10 rounded-full mr-4" src="../../storage/img/users/<?php echo $row['user_profile_puc'];?>" alt="Avatar of Jonathan Reinink">
+      <div class="text-sm">
+        <a href="../../php_main/inside/other_profile.php?id=<?php echo $row['user_id'];?>" class="text-gray-900 leading-none"><?php echo $row['user_first_name']. " " .$row['user_second_name'];?></a>
+        <p class="text-gray-600"><?php echo $row['post_date'];?></p>
+      </div>
+    </div>
   </div>
-  <div class="px-6 py-4">
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#<?php echo $row['blog_category']?></span>
-  </div>
-</a>  
-</div>
 
-<?php }?>
+<?php }} else{
+  echo ' <img style="object-fit:cover" class="pt-16 h-64 rounded-full mr-4" src="../../storage/img/blank.svg" alt="Sajnos nincs ilyen találatunk !"><p>Sajnos nincs ilyen találatunk :(</p>';}?>

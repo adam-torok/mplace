@@ -35,6 +35,20 @@ body {
   margin: 0;
 }
 
+.area-bg{
+  background: rgba(0,0,0,0) url("../storage/img/bg.png") no-repeat scroll left top/auto 100%;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  -webkit-animation: animation 10s linear infinite alternate;
+  animation: animation 10s linear infinite alternate;
+  opacity: .3;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%
+}
+
 /**
  * Render the `main` element consistently in IE.
  */
@@ -67255,4 +67269,13 @@ video {
   .xl\:duration-1000 {
     transition-duration: 1000ms;
   }
+}
+
+@keyframes animation{
+  0% {
+    background-position: 0 0;
+} 
+100% {
+    background-position: 100% 0;
+}
 }
