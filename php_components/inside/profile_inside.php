@@ -92,8 +92,8 @@
                     <div class="lg:mr-4 p-3 text-center">
                       <span
                         class="counter text-xl font-bold block uppercase tracking-wide text-gray-700"
-                        >0</span
-                      ><span class="text-sm text-gray-500">Kommentek</span>
+                        ><?php echo getCommentNum($dbc,$_SESSION['uId']);?></span
+                      ><span class="text-sm text-gray-500">Posztok</span>
                     </div>
                   </div>
                 </div>

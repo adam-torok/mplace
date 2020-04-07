@@ -66,7 +66,12 @@ function loginUser($dbc,$userEmail,$userPassword){
     }
 }
 
-
+function getCommentNum($dbc,$id){
+    $sql = "SELECT COUNT(*) FROM posts WHERE user_id = $id";
+    $rs = mysqli_query($dbc,$sql);
+    $result = mysqli_fetch_array($rs);
+    return $result[0];
+}
 
 function getDatetimeNow() {
     $tz_object = new DateTimeZone('Brazil/East');
