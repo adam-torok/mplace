@@ -73,7 +73,7 @@
                       <span
                         class="counter text-xl font-bold block uppercase tracking-wide text-gray-700"
                         >0</span
-                      ><span class="text-sm text-gray-500">Ismerősök</span>
+                      ><span class="text-sm text-gray-500">Hírek</span>
                     </div>
                     <div class="mr-4 p-3 text-center">
                       <span

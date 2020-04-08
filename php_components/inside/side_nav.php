@@ -3,8 +3,7 @@
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full">
           </i>
-          <span class="mx-2">Ismerősök</span>
-        </span>
+          <a href="../../php_main/inside/news.php" class="mx-2">Hírek</a>        </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
           <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full">
           </i>

@@ -8,6 +8,21 @@ $("#results").load("../../php_logic/inside/pagination.php",{"page":page}, functi
     });
 
 
+    $(document).ready(function(){  
+    fetch('http://newsapi.org/v2/top-headlines?' + 'country=hu&' +'apiKey=eed39cf371d04783aa85d8f258030d56').then(function(response) {
+        return response.json();
+        })
+        .then(function(response) {
+        for(var prop in response) {
+            for(var prop in response.articles) {
+                console.log(response.articles[prop]);
+              var temp = '<div style="margin-bottom:3rem;margin-top:2rem;" class="card m-5 bg-white w-full shadow-lg rounded-lg p-5"><a style="width: 100%;margin: 22px;" href="'+ response.articles[prop].url +'" class="max-w-sm m-5 rounded overflow-hidden shadow-lg"><img style="object-fit:cover" class="w-full h-48" src="'+response.articles[prop].urlToImage+'" alt="Kép címe"><div class="px-6 py-4"><div class="font-bold text-xl mb-2">'+ response.articles[prop].title + '</div><p class="text-gray-700 text-base">'+response.articles[prop].description+'</p></div><div class="px-6 py-4"><p class="text-gray-600">'+ response.articles[prop].publishedAt +'</p></div></a></div>';
+                $(".news-holder").append(temp);
+            }
+        }
+        })
+    })  
+
     $("#search").on('keyup',function(){
     var search = $(this).val();
     $.get( "../../php_logic/inside/search.php", {input:search}, function( data ) {
