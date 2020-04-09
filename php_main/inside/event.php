@@ -16,9 +16,11 @@ isLogged();
     <?php include_once("../../php_components/inside/header_inside.php");?>
     <?php include_once("../../php_components/inside/side_nav.php");?>
     <div id="background" style="padding-top:3vw;margin-left:calc(20%);"class="flex justify-center flex-col items-center">
-      <div class="w-2/3 pt-12  md:px-12 lg:24 h-full m-0 antialiasedl">
+      <div class="bg-white">
       <?php include_once("../../php_components/inside/event_maker.php");?>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:1vw;">
       <?php include_once("../../php_components/inside/event_wall.php");?>
+      </div>
       </div>
       <script src="../../js/ajax/ajax.js"></script>
       <script src="../../js/ajax/weather.js"></script>

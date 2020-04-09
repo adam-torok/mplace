@@ -1,6 +1,7 @@
 <?php
 require_once("../../configuration/config.php");
 require_once("../functions/functions.php");
+debugTool();
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $user_id = $_SESSION['uId'];
@@ -11,9 +12,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     if(isset($_POST['event_type'])){
         $event_type = $_POST['event_type'];
-    }else{
-        $event_type = "0";
-    }
+        if($event_type != "1"){
+            $event_type = "0";
+        }
+        }else{
+            $event_type = "0";
+        }
 
     trim($event_name);
     trim($event_desc);
@@ -28,6 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $stmt->bind_param("issssss",$user_id,$event_name,$event_desc,$event_type,$event_date,$event_upload_date,$event_pic);
             $stmt->execute();
             $stmt->close();
+            echo "lol";
             }
         }
     }
@@ -38,8 +43,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $stmt->bind_param("isssss",$user_id,$event_name,$event_desc,$event_type,$event_date,$event_upload_date);
             $stmt->execute();
             $stmt->close();   
+            echo "fasz";
         }
     }   
-} 
+    } 
     
 ?>

@@ -12,14 +12,12 @@ $(document).ready(function(){
         // A formdatás módszer jelen esetbe egyszerűbb mint kivinni változóba az értékeket
         var formData = new FormData(this);
         console.log(formData);
-        e.preventDefault();
         $.ajax({
             url: "../../php_logic/inside/post_an_event.php",
             type: 'POST',
             data: formData,
             success: function (data) {
-                console.log(data);
-                
+
             },
             cache: false,
             contentType: false,

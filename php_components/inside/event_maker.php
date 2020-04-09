@@ -1,4 +1,4 @@
-<div class="w-2/3  h-full m-10 antialiased">
+<div style="margin-left:20%" class="w-2/3  h-full m-10 antialiased">
 <form novalidate enctype="multipart/form-data" id="event-writer" method="POST">
     <div class="card bg-white w-full shadow-lg rounded-lg p-5">
     <input name="event_name" class="bg-white w-full rounded-lg border p-2 mb-2" type="text" placeholder="Esemény neve" required>
