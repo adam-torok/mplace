@@ -4,7 +4,7 @@
 ?>
 
 <?php while($row = $result -> fetch_assoc()){?>
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
+<div class="max-w-sm m-5 rounded overflow-hidden shadow-lg">
 <?php if(!empty($row['event_pic'])){?>
   <img class="w-full" src="../../storage/img/users/<?php echo $row['event_pic']?>">
 <?php } ?>
