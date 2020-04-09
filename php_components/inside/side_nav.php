@@ -10,6 +10,11 @@
           <a href="../../php_main/inside/search.php" class="mx-2">Keresés</a>
         </span>
         <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
+          <i class="w-8 fas fa-glass-cheers p-2 bg-gray-200 rounded-full">
+          </i>
+          <a href="../../php_main/inside/event.php" class="mx-2">Események</a>
+        </span>
+        <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
             <i class="w-8 fas fa-user p-2 bg-gray-200 rounded-full">
             </i>
               <a  class="hover:text-gray-900 mx-2" href="../../php_main/inside/people.php" >Emberek</a>

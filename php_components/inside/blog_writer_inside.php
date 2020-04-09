@@ -14,8 +14,7 @@
           <input class="hidden-file-input hidden" id="blog-file" accept="image/x-png,image/gif,image/jpeg" type="file" name="blogImg" id="blog-img">
           <label for="blog-file" class="material-icon">
             <i class=" fas fas  float right fa-upload p-3 m-3 bg-gray-200 rounded-full"></i>
-          </label>
-          
+          </label>  
         </div>
       </div>
     </div>

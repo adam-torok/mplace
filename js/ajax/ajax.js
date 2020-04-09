@@ -1,11 +1,31 @@
 $(document).ready(function(){   
-$("#results").load( "../../php_logic/inside/pagination.php");
-$("#results").on( "click", ".pagination a", function (e){
-e.preventDefault();
-var page = $(this).attr("data-page");
-$("#results").load("../../php_logic/inside/pagination.php",{"page":page}, function(){ 
-});
+    $("#results").load( "../../php_logic/inside/pagination.php");
+    $("#results").on( "click", ".pagination a", function (e){
+    e.preventDefault();
+    var page = $(this).attr("data-page");
+    $("#results").load("../../php_logic/inside/pagination.php",{"page":page}, function(){ 
     });
+});
+
+
+    $("#event-writer").on("submit",function(e){
+        // A formdatás módszer jelen esetbe egyszerűbb mint kivinni változóba az értékeket
+        var formData = new FormData(this);
+        console.log(formData);
+        e.preventDefault();
+        $.ajax({
+            url: "../../php_logic/inside/post_an_event.php",
+            type: 'POST',
+            data: formData,
+            success: function (data) {
+                console.log(data);
+                
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    })
 
 
     $(document).ready(function(){  
@@ -15,7 +35,6 @@ $("#results").load("../../php_logic/inside/pagination.php",{"page":page}, functi
         .then(function(response) {
         for(var prop in response) {
             for(var prop in response.articles) {
-                console.log(response.articles[prop]);
               var temp = '<div style="margin-bottom:3rem;margin-top:2rem;" class="card m-5 bg-white w-full shadow-lg rounded-lg p-5"><a style="width: 100%;margin: 22px;" href="'+ response.articles[prop].url +'" class="max-w-sm m-5 rounded overflow-hidden shadow-lg"><img style="object-fit:cover" class="w-full h-48" src="'+response.articles[prop].urlToImage+'" alt="Kép címe"><div class="px-6 py-4"><div class="font-bold text-xl mb-2">'+ response.articles[prop].title + '</div><p class="text-gray-700 text-base">'+response.articles[prop].description+'</p></div><div class="px-6 py-4"><p class="text-gray-600">'+ response.articles[prop].publishedAt +'</p></div></a></div>';
                 $(".news-holder").append(temp);
             }
