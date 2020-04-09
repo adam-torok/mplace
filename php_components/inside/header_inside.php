@@ -9,10 +9,6 @@
           <i class="fas fa-search p-2 bg-gray-200 rounded-full">
           </i>
         </span>
-        <span class="px-1 cursor-pointer hover:text-gray-700">
-          <i class="w-8 fas fa-calendar-alt p-2 bg-gray-200 rounded-full">
-          </i>
-        </span>
         <span id="nightmode" class="px-1 w-8 relative cursor-pointer hover:text-gray-700">
           <i class="w-8 fas fa-moon p-2 bg-gray-200 rounded-full">
           </i>

@@ -18,10 +18,5 @@
         <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full"> <span class="absolute  -mt-2 -mr-1 text-xs bg-red-500 text-white font-medium px-2 shadow-lg rounded-full"><?php getBlogCount($dbc);?></span></i>
           <a href="../../php_main/inside/blog.php" class="mx-2">Blog</a>
         </span>
-        <span class="sidebar-item cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5">
-          <i class="w-8 fas fa-calendar-alt p-2 bg-gray-200 rounded-full">
-          </i>
-          <span class="mx-2">Naptár</span>
-        </span>
       </div>
     </div>
